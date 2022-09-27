@@ -1,0 +1,275 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: none;
+    text-decoration: none;
+    list-style: none;
+
+}
+*:focus {
+    outline: 0;
+}
+html,body {
+    font-size: 10px;
+    height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background: linear-gradient(#009688 0%, #009688 130px, #f1f3ee 130px, #f1f3ee 100%);
+    overflow-y: hidden;
+}
+.container{
+    height: calc(100vh - 40px);
+    width: 90%;
+    margin: 40px auto 0 auto;
+}
+.chat {
+    height: 100%;
+    display: flex;
+}
+/* Sidebar START */
+.chat .sidebar{
+    height: 100%;
+    background-color: #fcf8f8;
+    min-width: 30rem;
+    display: flex;
+    flex-direction: column;
+}
+.chat .sidebar .main-user,
+.chat .sidebar .search {
+    min-height: 5rem;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+}
+.chat .sidebar .main-user {
+    justify-content: space-between;
+    background-color: #eeeded;
+    border-bottom: .1rem solid #ddd;
+}
+.chat .sidebar .main-user img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+}
+.chat .sidebar .main-user div.actions ul {
+    display: flex;
+}
+.chat .sidebar .main-user div.actions ul li {
+    margin-left: 1.8rem ;
+}
+.chat .sidebar .main-user div.actions ul li a {
+    font-size: 1.9rem ;
+    color: #999;
+    display: block;
+}
+.chat .sidebar .main-user div.actions ul li a:hover {
+    color: #222;
+}
+.chat .sidebar .search {
+    border-bottom: .1rem solid;
+    position: relative; 
+}
+.chat .sidebar .search input {
+    height: 3rem;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 3rem;
+    font-size: 1.4rem;
+    padding: 0 3.5rem 0 1.5rem;
+}
+.chat .sidebar .search i {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    width: 3.5rem;
+    height: 5rem;
+    display: flex; 
+    align-items: center;
+    font-size: 1.4rem;
+    color: #999;
+}
+.chat .sidebar .contacts{
+    overflow: auto;
+}
+.chat .sidebar .contacts ul li a {
+    display: flex;
+    height: 6rem;
+    align-items: center;
+    padding: 0 1rem;
+}
+.chat .sidebar .contacts ul li .active,
+.chat .sidebar .contacts ul li a:hover {
+    background-color: #fff;
+}
+.chat .sidebar .contacts ul li a .modification {
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    background-color: red;
+    font-size: 1.1rem;
+    color: #fff;
+    text-align: center;
+    line-height: 1.7rem;
+    margin-left: auto;
+    
+}
+.chat .sidebar .contacts ul li a img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 4rem;
+    margin-right: 1rem;
+}
+.chat .sidebar .contacts ul li a .contact .name {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 500;
+    margin-bottom: .3rem;
+}
+.chat .sidebar .contacts ul li a .contact .message {
+    font-size: 1.3rem;
+    color: #999;
+}
+/* Sidebar END */
+/* Content START */
+.chat .content {
+    flex: 1;
+    border-left: .1rem #ddd solid;
+    display: flex;
+    flex-direction: column;
+}
+.chat .content .message-header {
+    min-height: 5rem;
+    border-bottom: .1rem solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 0 1.5rem;
+    background-color: #ededed;
+}
+.chat .content .message-header .user-info {
+    display: flex;
+    align-items: center;
+}
+.chat .content .message-header .user-info .name {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #222;
+
+}
+.chat .content .message-header .user-info .time {
+    font-size: 1.3rem;
+    color: #999;
+}
+.chat .content .message-header .actions ul {
+    display: flex;
+}
+.chat .content .message-header .actions ul li{
+    margin-left: 1.2rem ;
+}
+.chat .content .message-header .actions ul li a {
+    font-size: 1.9rem ;
+    color: #999;
+    display: block;
+    width: 3rem;
+}
+.chat .content .message-header .actions ul li a:hover {
+    color: #222;
+}
+.img {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+.chat .content .message-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    background-color: #fff;
+}
+.chat .content .message-content::before {
+    content: " ";
+    margin-bottom: auto;
+}
+.chat .content .message-content .message {
+    align-self: flex-start;
+    margin-bottom: 2rem;
+
+}
+.chat .content .message-content .message .bubble {
+    background-color: gray;
+    padding: .6rem 1.2rem ;
+    border-radius: 2rem;
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+}
+.chat .content .message-content .message .time {
+    font-size: 1.2rem;
+    color: #999;
+}
+.chat .content .message-content .message.me .bubble {
+    background: #2196f3;
+}
+
+.chat .content .message-content .message.me {
+    align-self: flex-end;
+}
+.chat .content .message-form {
+    border-top: .1rem solid #ddd;
+    background-color: #eeeded;
+    padding: 1rem;
+}
+
+.chat .content .message-form ul {
+    display: flex;
+}
+
+.chat .content .message-form ul li {
+    margin: 0 1rem;
+}
+.chat .content .message-form ul li.input {
+    flex: 1;
+}
+.chat .content .message-form ul li.input input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 3.6rem;
+    border: .1rem solid #ddd;
+    border-radius: 3.6rem;
+    font-size: 1.4rem;
+    padding: 0 1.5rem;
+}
+.chat .content .message-form ul li a {
+    width: 3.6rem;
+    height: 3.6rem;
+    display: block;
+    border-radius: 50%;
+    color: #fff;
+    text-align: center;
+    line-height: 3.6rem;
+    
+}
+.chat .content .message-form ul li.emoji-btn a {
+    background-color: #339af0;
+}
+.chat .content .message-form ul li.voice-btn a {
+    background-color: #ff5722;
+}
+.chat .content .message-form ul li.sound-btn a {
+    background-color: #4caf50;
+}
+@media (max-width: 800px) {
+    html {
+        font-size: 9px;
+    }
+    .container{
+        height: 100vh;
+        width: 100%;
+        margin: 0;
+    }
+}
+@media (max-width: 600px) {
+    html {
+        font-size: 8px;
+    }
+}
